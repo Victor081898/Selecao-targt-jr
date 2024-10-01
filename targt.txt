@@ -1,0 +1,92 @@
+K = 1, SOMA = 0 + 1 = 1
+K = 2, SOMA = 1 + 2 = 3
+k = 3, SOMA = 3 + 3 = 6
+k = 4. SOMA = 6 + 4 = 10
+K = 5, SOMA = 10 + 5 = 15
+K = 6, SOMA = 15 + 6 = 21
+K = 7, SOMA = 21 + 7 = 28
+k = 8, SOMA = 28 + 8 = 36
+K = 9, SOMA = 36 + 9 = 45
+k = 10, SOMA = 45 + 10 = 55
+k = 11, SOMA = 55 + 11 = 66
+k = 12, SOMA = 66 + 12 = 78
+k = 13, SOMA = 78 + 13 = 91
+
+Resposta: SOMA terá valor 91
+
+Questão 2
+
+# Função para gerar a sequência de Fibonacci até o número informado ou maior
+def fibonacci_sequence(limit):
+    fib_sequence = [0, 1]  # Inicia a sequência com 0 e 1
+    while fib_sequence[-1] < limit:
+        fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+    return fib_sequence
+
+# Função para verificar se o número pertence à sequência de Fibonacci
+def is_in_fibonacci(number):
+    fib_sequence = fibonacci_sequence(number)
+    
+    # Checa se o número está na lista gerada
+    if number in fib_sequence:
+        return f"O número {number} pertence à sequência de Fibonacci."
+    else:
+        return f"O número {number} NÃO pertence à sequência de Fibonacci."
+
+# Exemplo: Entrada do usuário
+try:
+    number = int(input("Informe um número para verificar se pertence à sequência de Fibonacci: "))
+    print(is_in_fibonacci(number))
+except ValueError:
+    print("Por favor, informe um número inteiro válido.")
+
+Questão 3
+[
+    {"dia": 1, "faturamento": 1000.50},
+    {"dia": 2, "faturamento": 0.0},
+    {"dia": 3, "faturamento": 2000.75},
+    {"dia": 4, "faturamento": 0.0},
+    {"dia": 5, "faturamento": 2500.10},
+    {"dia": 6, "faturamento": 3000.30},
+    {"dia": 7, "faturamento": 0.0}
+]
+
+Questão 4
+
+# Valores de faturamento por estado
+faturamento_estados = {
+    'SP': 67836.43,
+    'RJ': 36678.66,
+    'MG': 29229.88,
+    'ES': 27165.48,
+    'Outros': 19849.53
+}
+
+# Calcula o faturamento total
+faturamento_total = sum(faturamento_estados.values())
+
+# Calcula e exibe o percentual de cada estado
+print("Percentual de representação por estado:")
+for estado, faturamento in faturamento_estados.items():
+    percentual = (faturamento / faturamento_total) * 100
+    print(f"{estado}: {percentual:.2f}%")
+
+# Exibe o faturamento total
+print(f"\nFaturamento total: R${faturamento_total:.2f}")
+
+
+Questão 5
+
+# Função para inverter uma string
+def inverter_string(texto):
+    texto_invertido = ''
+    for i in range(len(texto) - 1, -1, -1):  # Itera do último caractere até o primeiro
+        texto_invertido += texto[i]
+    return texto_invertido
+
+# Entrada do usuário
+texto_original = input("Informe uma string para ser invertida: ")
+
+# Chama a função e exibe a string invertida
+texto_invertido = inverter_string(texto_original)
+print(f"String invertida: {texto_invertido}")
